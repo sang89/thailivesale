@@ -24,7 +24,7 @@ def something():
         #z['ds'] = [year]
         #num_reactions = int(model.predict(z)['yhat'][0])
     num_reactions=10
-    return render_template('resultform.html', year=year,   num_reactions=num_reactions)          
+    return render_template('resultform.html', num_reactions=num_reactions)          
 
 if __name__ == '__main__':
     application.run()
