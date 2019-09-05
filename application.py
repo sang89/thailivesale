@@ -1,8 +1,8 @@
 import flask
 #from wsgiref.simple_server import make_server
-import pandas as pd
-import numpy as np
-import pickle
+#import pandas as pd
+#import numpy as np
+#import pickle
 
 application = flask.Flask(__name__)
 
@@ -12,17 +12,18 @@ def hello_world():
 
 @application.route('/result', methods=['GET', 'POST'])
 def something():
-    if request.method == 'POST':
-        filename = 'model.pkl'
+    #if request.method == 'POST':
+        #filename = 'model.pkl'
         #filename = url_for('static', filename='model.pkl')
         #cwd = os.getcwd()
         #filename = cwd + '/eb-flask/model.pkl'
-        model = pickle.load(open(filename, 'rb'))#you can use pickle to load the trained model
-        year = request.form['year']
-        z = pd.DataFrame()
-        z['ds'] = [year]
-        num_reactions = int(model.predict(z)['yhat'][0])
-        return render_template('resultform.html', year=year,   num_reactions=num_reactions)          
+        #model = pickle.load(open(filename, 'rb'))#you can use pickle to load the trained model
+        #year = request.form['year']
+        #z = pd.DataFrame()
+        #z['ds'] = [year]
+        #num_reactions = int(model.predict(z)['yhat'][0])
+    num_reactions=10
+    return render_template('resultform.html', year=year,   num_reactions=num_reactions)          
 
 if __name__ == '__main__':
     application.run()
