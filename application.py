@@ -22,7 +22,7 @@ def something():
         #z = pd.DataFrame()
         #z['ds'] = [year]
         #num_reactions = int(model.predict(z)['yhat'][0])
-    num_reactions=10
+    num_reactions=1
     return render_template('resultform.html', num_reactions=num_reactions)          
 
 if __name__ == '__main__':
